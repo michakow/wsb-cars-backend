@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const carRoutes = require('./api/routes/cars');
 const userRoutes = require('./api/routes/users');
@@ -20,6 +21,7 @@ const app = express();
 
 app.use(morgan('combined'));
 app.use(bodyParser.json());
+app.use(cors());
 
 app.listen(port, () => {
   console.log('Aplikacja wystartowała na porcie', port);
