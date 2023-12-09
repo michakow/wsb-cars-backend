@@ -11,7 +11,11 @@ exports.getUsers = (req, res, next) => {
         users,
       });
     })
-    .catch((err) => console.log(err));
+    .catch((err) =>
+      res.status(500).json({
+        message: 'Nie udało się odczytać listy',
+      })
+    );
 };
 
 exports.signUp = (req, res, next) => {

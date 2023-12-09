@@ -8,7 +8,11 @@ exports.getCars = (req, res, next) => {
         cars,
       });
     })
-    .catch((err) => console.log(err));
+    .catch((err) =>
+      res.status(500).json({
+        message: 'Nie udało się odczytać listy',
+      })
+    );
 };
 
 exports.getCarById = (req, res, next) => {
