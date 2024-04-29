@@ -6,8 +6,8 @@ const router = express.Router();
 
 router.get('/', CarsController.getCars);
 router.get('/:id', CarsController.getCarById);
-router.post('/', checkAuth, CarsController.addCar);
-router.put('/:id', checkAuth, CarsController.updateCar);
-router.delete('/:id', checkAuth, CarsController.deleteCar);
+router.post('/', CarsController.addCar);
+router.put('/:id', CarsController.updateCar);
+router.delete('/:id', CarsController.deleteCar);
 
 module.exports = router;
